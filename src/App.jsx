@@ -31,7 +31,7 @@ function App() {
 
   return (
     <div className="App">
-      <Weather />
+      <Weather location={location} setLocation={setLocation}/>
     </div>
   );
 }

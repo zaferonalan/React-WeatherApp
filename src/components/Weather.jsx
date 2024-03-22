@@ -1,6 +1,11 @@
 import React from "react";
 
-const Weather = () => {
+const Weather = ({setLocation,location}) => {
+
+  const handleLocationChange = (event) => {
+    setLocation(event.target.value)
+  }
+
   return (
     <div className="app-container">
       <h1 className="app-title">Hava Durumu Uygulaması</h1>
@@ -9,6 +14,8 @@ const Weather = () => {
           className="location-input"
           type="text"
           placeholder="Şehir Giriniz"
+          value={location}
+          onChange={handleLocationChange}
         />
       </div>
     </div>
