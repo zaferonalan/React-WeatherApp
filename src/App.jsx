@@ -10,7 +10,8 @@ function App() {
 
   console.log(import.meta.env.VITE_WEATHER_API)
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async () => 
+    {
       try {
         const response = await axios.get(
           `http://api.weatherapi.com/v1/forecast.json?key=${import.meta.env.VITE_WEATHER_API}&q=${location}&days=4&aqi=yes&alerts=yes`
@@ -21,11 +22,13 @@ function App() {
         console.log(error);
       }
 
-      if (location) {
+      if (location) 
+      {
         fetchData()
       }
     };
   }, [location]);
+
   return (
     <div className="App">
       <Weather />
