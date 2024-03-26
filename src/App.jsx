@@ -1,4 +1,5 @@
 import "./App.css";
+import Info from "./components/Info";
 import Weather from "./components/Weather";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
   return (
     <div className="App">
       <Weather/>
+      <Info/>
     </div>
   );
 }
