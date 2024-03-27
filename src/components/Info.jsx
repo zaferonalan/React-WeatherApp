@@ -1,16 +1,21 @@
 import { TbTemperatureCelsius } from "react-icons/tb";
 import { WiSunset } from "react-icons/wi";
-const Info = () => {
+const Info = ({info,state}) => {
   return (
-    <div className="info">
-        <p id="Şehir, ülke"></p>
-        <div className="genelDeger">
-            <p id="sicaklik">--</p><TbTemperatureCelsius className='fa-c'/>
-        </div>
-        <p id="havadurumu">Hava Durumu</p>
-        <div className="his">
-            <p id="hissedilen">Hissedilen</p><WiSunset className='fa-c'/>
-        </div>
+    <div>
+      {
+        state ? 
+          <div className="info">
+            <p id="sehir">{info.name},{info.sys.country}</p>
+            <div className="genelDeger">
+                <p id="sicaklik">{info.main.temp}</p><TbTemperatureCelsius className='fa-c'/>
+            </div>
+            <p id="havadurumu">{info.weather[0].description}</p>
+            <div className="his">
+                <p id="hissedilen">{info.main.feels_like}</p><WiSunset className='fa-c'/>
+            </div>
+          </div> : null
+      }
     </div>
   )
 }
